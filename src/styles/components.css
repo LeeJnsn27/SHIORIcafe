@@ -1,0 +1,530 @@
+/* SHIORI Café — components.css: cards, menu ordering, chat, forms, seat map */
+
+.card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-soft);
+    background-color: var(--color-cream);
+    box-shadow: 0 8px 24px rgba(56, 37, 29, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(74, 52, 40, 0.08);
+}
+
+/* menu + ordering */
+.menu-section {
+    padding-bottom: 5rem;
+}
+
+.menu-card .card-body {
+    padding: 1.5rem;
+}
+
+/* photo box sits on the left, content column sits on the right */
+.menu-card-body {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.menu-card-content {
+    flex: 1;
+    min-width: 0; /* lets long text wrap instead of overflowing the flex row */
+}
+
+/* small placeholder box shown until a real photo is added */
+.menu-photo-placeholder {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    background-color: var(--color-linen);
+    border: 1px dashed var(--color-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-espresso-soft);
+}
+
+.menu-photo-placeholder i {
+    font-size: 1.4rem;
+}
+
+/* apply this class to a real <img> once a photo replaces the placeholder above */
+.menu-photo {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.cafe-badge {
+    background-color: var(--color-clay);
+    color: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 700;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(74, 52, 40, 0.08);
+}
+
+.order-summary-card {
+    top: 100px; /* offset for sticky-top */
+}
+
+.empty-order-message {
+    color: var(--color-espresso-soft);
+    font-style: italic;
+    background-color: transparent;
+}
+
+#order-list .list-group-item {
+    background-color: transparent;
+    border-color: var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.item-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.remove-item-btn {
+    background: none;
+    border: none;
+    color: var(--color-clay);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 0.25rem;
+}
+
+.remove-item-btn:hover {
+    color: var(--color-espresso);
+}
+
+.quantity-btn {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background-color: var(--color-cream);
+    color: var(--color-espresso);
+    line-height: 1;
+    padding: 0;
+}
+
+.quantity-btn:hover {
+    background-color: var(--color-matcha);
+    border-color: var(--color-matcha);
+    color: #FFFFFF;
+}
+
+.quantity-value {
+    min-width: 1.25rem;
+    text-align: center;
+}
+
+.order-total-row {
+    font-size: 1.2rem;
+    color: var(--color-espresso);
+}
+
+.order-warning {
+    color: var(--color-clay);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.order-confirmation {
+    border-radius: var(--radius-soft);
+    border: 1px solid var(--color-matcha);
+    background-color: #EAF0E6;
+    color: var(--color-espresso);
+}
+
+.order-confirmation .bi-check-circle {
+    margin-right: 0.4rem;
+}
+
+/* story photo (about.html) */
+.story-section {
+    padding: 4rem 2rem 3rem;
+    border-radius: var(--radius-soft);
+    background-image: linear-gradient(rgba(255, 247, 232, 0.68), rgba(255, 247, 232, 0.68)),
+                      url("https://i.pinimg.com/736x/4c/17/1d/4c171dd85a5979b0f9cd2ce4304f0ac5.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.story-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: var(--color-cream);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-soft);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--color-espresso-soft);
+}
+
+.story-photo-placeholder i {
+    font-size: 2rem;
+}
+
+.story-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-soft);
+}
+
+/* values (about.html) */
+.values-section {
+    padding: 1rem 0 4rem 0;
+}
+
+.value-card {
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-soft);
+    padding: 1.75rem;
+    text-align: center;
+}
+
+.value-icon {
+    font-size: 1.8rem;
+    color: var(--color-matcha-dark);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+/* AI study companion chat (about.html) */
+.chat-section {
+    padding-bottom: 5rem;
+}
+
+.chat-intro {
+    color: var(--color-espresso-soft);
+    margin-bottom: 2rem;
+}
+
+.chat-card .card-body {
+    padding: 1.5rem;
+}
+
+.chat-messages {
+    height: 320px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--color-linen);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-soft);
+}
+
+.chat-bubble {
+    max-width: 80%;
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 14px;
+    line-height: 1.5;
+}
+
+.chat-bubble-ai {
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-border);
+    color: var(--color-espresso-soft);
+    margin-right: auto;
+}
+
+.chat-bubble-student {
+    background-color: var(--color-matcha);
+    color: #FFFFFF;
+    margin-left: auto;
+}
+
+.chat-input-group .form-control {
+    border-radius: 999px 0 0 999px;
+    border: 1px solid var(--color-border);
+}
+
+.chat-input-group .btn {
+    border-radius: 0 999px 999px 0;
+}
+
+@media (max-width: 576px) {
+    .menu-card .card-body,
+    .reservation-form-card .card-body,
+    .chat-card .card-body {
+        padding: 1rem;
+    }
+
+    .menu-card-body {
+        gap: 0.75rem;
+    }
+
+    .menu-photo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .seat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+
+    .seat-btn {
+        min-height: 58px;
+        padding: 0.75rem 0.35rem;
+        font-size: 0.9rem;
+    }
+
+    .chat-messages {
+        height: 280px;
+    }
+
+    .chat-bubble {
+        max-width: 92%;
+    }
+
+    .chat-input-group .form-control,
+    .chat-input-group .btn {
+        border-radius: 999px;
+    }
+
+    .chat-input-group .btn {
+        margin-left: 0.5rem;
+    }
+}
+
+/* reservation form (contact.html) */
+.reservation-section {
+    padding-bottom: 5rem;
+}
+
+.reservation-page-header {
+    background-image: linear-gradient(rgba(255, 247, 232, 0.78), rgba(255, 247, 232, 0.78)),
+                      url("https://i.pinimg.com/1200x/b9/c2/a6/b9c2a626c225f133f42a1ddb8fdc74d5.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.reservation-page-header .page-title,
+.reservation-page-header .lead {
+    text-shadow: 0 2px 4px rgba(255, 247, 232, 0.95);
+}
+
+/* seat availability map (contact.html) */
+.seat-section {
+    width: 100%;
+    max-width: none;
+    padding: 1rem 0 3rem 0;
+    background-image: linear-gradient(rgba(255, 247, 232, 0.86), rgba(255, 247, 232, 0.86)),
+                      url("https://i.pinimg.com/1200x/b9/c2/a6/b9c2a626c225f133f42a1ddb8fdc74d5.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.seat-section .section-heading,
+.seat-section .seat-intro,
+.seat-section .seat-legend-item {
+    text-shadow: 0 1px 2px rgba(255, 247, 232, 0.9);
+}
+
+.seat-intro {
+    color: var(--color-espresso-soft);
+    margin-bottom: 1.5rem;
+}
+
+.seat-legend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.seat-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--color-espresso-soft);
+}
+
+.seat-swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+}
+
+.seat-swatch-available {
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-matcha);
+}
+
+.seat-swatch-occupied {
+    background-color: var(--color-clay);
+}
+
+.seat-swatch-selected {
+    background-color: var(--color-matcha);
+}
+
+.seat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+}
+
+.seat-btn {
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1rem 0.5rem;
+    font-weight: 600;
+    color: var(--color-espresso);
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.seat-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-matcha);
+}
+
+.seat-btn.seat-selected {
+    background-color: var(--color-matcha);
+    border-color: var(--color-matcha);
+    color: #FFFFFF;
+}
+
+.seat-btn.seat-occupied {
+    background-color: #9b9b9b;
+    border-color: #858585;
+    color: #FFFFFF;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.seat-btn.seat-occupied:hover {
+    transform: translateY(-2px);
+}
+
+.selected-seat-display {
+    background-color: var(--color-linen);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 0.6rem 0.9rem;
+    font-weight: 600;
+    color: var(--color-espresso);
+    margin-bottom: 0;
+}
+
+.reservation-availability {
+    color: var(--color-clay);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+#use-suggested-time {
+    border-radius: 8px;
+}
+
+.reservation-form-card .card-body {
+    padding: 2rem;
+}
+
+.form-label {
+    font-weight: 700;
+    color: var(--color-espresso);
+}
+
+.form-control,
+.form-check-input {
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-border);
+    color: var(--color-espresso);
+}
+
+.form-control:focus {
+    background-color: var(--color-cream);
+    border-color: var(--color-matcha);
+    box-shadow: 0 0 0 0.2rem rgba(124, 144, 112, 0.25);
+}
+
+/* tints the radio button dot itself to match the palette */
+.form-check-input:checked {
+    background-color: var(--color-matcha);
+    border-color: var(--color-matcha);
+}
+
+.reservation-confirmation {
+    border-radius: var(--radius-soft);
+    border: 1px solid var(--color-matcha);
+    background-color: #EAF0E6;
+    color: var(--color-espresso);
+}
+
+.reservation-confirmation .bi-check-circle {
+    margin-right: 0.4rem;
+}
+
+/* visit us (contact.html) */
+.visit-card .card-body {
+    padding: 1.75rem;
+}
+
+.visit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-espresso-soft);
+}
+
+.visit-item i {
+    color: var(--color-matcha-dark);
+    margin-top: 0.15rem;
+}
+
+.visit-map-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: var(--color-linen);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-soft);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--color-espresso-soft);
+}
+
+.visit-map-placeholder i {
+    font-size: 2rem;
+}

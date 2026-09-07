@@ -1,0 +1,298 @@
+/* SHIORI Café — main.css: palette, typography, nav, hero, buttons, footer */
+
+:root {
+    --color-linen: #E9D8BE;
+    --color-cream: #FFF7E8;
+    --color-espresso: #38251D;
+    --color-espresso-soft: #654D3D;
+    --color-matcha: #788E69;
+    --color-matcha-dark: #536A4B;
+    --color-border: #D4B991;
+    --color-clay: #B9664D;
+    --radius-soft: 18px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--color-linen);
+    background-image: linear-gradient(135deg, rgba(255, 247, 232, 0.18), rgba(184, 137, 91, 0.08));
+    color: var(--color-espresso-soft);
+    line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 700;
+    color: var(--color-espresso);
+}
+
+.section-heading {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+/* navbar */
+.navbar {
+    background-color: var(--color-cream);
+    border-bottom: 1px solid var(--color-border);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 4px 18px rgba(56, 37, 29, 0.08);
+}
+
+.navbar-brand {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--color-espresso) !important;
+}
+
+.nav-link {
+    color: var(--color-espresso-soft) !important;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-matcha-dark) !important;
+}
+
+/* hero */
+.hero-section {
+    min-height: 560px;
+    padding: 8rem 0 7rem 0;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(48, 31, 23, 0.48), rgba(48, 31, 23, 0.64)),
+                      url("https://i.pinimg.com/1200x/9d/4d/c2/9d4dc29324bee6699991636178998700.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+}
+
+.hero-eyebrow {
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title {
+    margin-bottom: 1rem;
+    color: #FFF9ED;
+    text-shadow: 0 3px 14px rgba(33, 20, 14, 0.7);
+}
+
+.hero-subtitle {
+    max-width: 640px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    text-shadow: 0 2px 8px rgba(33, 20, 14, 0.65);
+}
+
+.btn-cafe-primary {
+    background-color: var(--color-matcha);
+    border: none;
+    color: #FFFFFF;
+    border-radius: 999px;
+    padding: 0.7rem 2rem;
+    font-weight: 700;
+    box-shadow: 0 6px 14px rgba(56, 37, 29, 0.16);
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-cafe-primary:hover {
+    background-color: var(--color-matcha-dark);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+.btn-cafe-secondary {
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-matcha);
+    color: var(--color-matcha-dark);
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(56, 37, 29, 0.08);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-cafe-secondary:hover {
+    background-color: var(--color-matcha);
+    color: #FFFFFF;
+}
+
+/* philosophy */
+.philosophy-section {
+    padding: 4rem 0;
+}
+
+.philosophy-card {
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-soft);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.philosophy-quote {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--color-espresso);
+    margin: 0;
+}
+
+/* hours */
+.hours-section {
+    background-color: var(--color-cream);
+    background-image: linear-gradient(rgba(255, 247, 232, 0.54), rgba(255, 247, 232, 0.54)),
+                      url("https://i.pinimg.com/736x/8c/d1/53/8cd15311ac5dff308317d7010bd29a78.jpg");
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 4rem 0;
+}
+
+.hours-section .section-heading,
+.testimonials-section .section-heading {
+    text-shadow: 0 2px 5px rgba(255, 247, 232, 0.95);
+}
+
+.hours-card {
+    background-color: var(--color-linen);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-soft);
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.features-section {
+    padding: 4rem 0;
+}
+
+.section-image {
+    display: block;
+    width: min(100%, 720px);
+    height: 180px;
+    object-fit: cover;
+    margin: 0 auto 2rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-soft);
+    box-shadow: 0 8px 22px rgba(56, 37, 29, 0.12);
+}
+
+
+/* page header, used on services/about/contact */
+.page-header {
+    padding: 4rem 0 2rem 0;
+}
+
+.page-title {
+    margin-bottom: 0.5rem;
+}
+
+/* testimonials */
+.testimonials-section {
+    background-color: var(--color-cream);
+    background-image: linear-gradient(rgba(255, 247, 232, 0.54), rgba(255, 247, 232, 0.54)),
+                      url("https://i.pinimg.com/736x/bf/37/69/bf37698fd5ac00ddc9b17e18bbc6379b.jpg");
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 4rem 0;
+}
+
+.testimonial-card {
+    background-color: var(--color-linen);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-soft);
+    padding: 1.75rem;
+}
+
+.testimonial-quote {
+    font-style: italic;
+    color: var(--color-espresso-soft);
+}
+
+.testimonial-name {
+    font-weight: 700;
+    color: var(--color-espresso);
+    margin-bottom: 0;
+}
+
+/* gallery */
+.gallery-section {
+    padding: 4rem 0;
+}
+
+.gallery-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: var(--color-cream);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-soft);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--color-espresso-soft);
+}
+
+.gallery-photo-placeholder i {
+    font-size: 2rem;
+}
+
+.gallery-photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-soft);
+}
+
+/* footer */
+.cafe-footer {
+    background-color: var(--color-espresso);
+    color: var(--color-linen);
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        min-height: 480px;
+        padding: 5rem 1rem 4rem;
+    }
+
+    .hero-title {
+        font-size: 2.35rem;
+    }
+
+    .section-heading {
+        font-size: 1.7rem;
+    }
+
+    .hours-section,
+    .testimonials-section,
+    .gallery-section,
+    .features-section,
+    .philosophy-section {
+        padding: 3rem 1rem;
+    }
+
+    .hours-card,
+    .testimonial-card {
+        min-height: 150px;
+    }
+
+    .section-image {
+        height: 150px;
+        margin-bottom: 1.5rem;
+    }
+}

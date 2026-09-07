@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIORI Café | Menu &amp; Table Ordering</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/components.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">栞 SHIORI Café</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About &amp; AI Buddy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Reserve a Nook</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header text-center">
+        <div class="container">
+            <h1 class="page-title">Menu &amp; Table Ordering</h1>
+            <p class="lead">Add drinks and snacks straight to your table — no queue, no rush.</p>
+        </div>
+    </header>
+
+    <section class="container menu-section">
+        <div class="row g-5">
+
+            <!-- menu cards -->
+            <div class="col-lg-8">
+                <div class="row row-cols-1 row-cols-sm-2 g-4">
+
+                    <!-- data-name / data-price read by script.js -->
+                    <div class="col">
+                        <div class="card menu-card h-100">
+                            <div class="card-body menu-card-body">
+                                <img class="menu-photo" src="https://lifecurrentsblog.com/wp-content/uploads/2025/02/hojicha-latte.jpg" alt="Hojicha Latte" loading="lazy">
+                                <div class="menu-card-content">
+                                    <h5 class="card-title">Hojicha Latte</h5>
+                                    <p class="card-text">Roasted green tea, steamed milk, gentle smokiness.</p>
+                                    <span class="badge cafe-badge">₱150</span>
+                                    <button type="button" class="btn btn-cafe-secondary add-to-table-btn w-100 mt-3"
+                                            data-name="Hojicha Latte" data-price="150">
+                                        + Add to Table
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card menu-card h-100">
+                            <div class="card-body menu-card-body">
+                                <img class="menu-photo" src="https://fancifuleats.com/wp-content/uploads/2024/04/iced-spanish-latte-2.jpg" alt="Spanish Latte" loading="lazy">
+                                <div class="menu-card-content">
+                                    <h5 class="card-title">Spanish Latte</h5>
+                                    <p class="card-text">Espresso with condensed milk, sweet and creamy.</p>
+                                    <span class="badge cafe-badge">₱140</span>
+                                    <button type="button" class="btn btn-cafe-secondary add-to-table-btn w-100 mt-3"
+                                            data-name="Spanish Latte" data-price="140">
+                                        + Add to Table
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card menu-card h-100">
+                            <div class="card-body menu-card-body">
+                                <img class="menu-photo" src="https://i.pinimg.com/736x/cd/c1/4e/cdc14ed21cb89833a5256fc4624878a3.jpg" alt="Matcha" loading="lazy">
+                                <div class="menu-card-content">
+                                    <h5 class="card-title">Matcha</h5>
+                                    <p class="card-text">Stone-ground ceremonial matcha, whisked to order.</p>
+                                    <span class="badge cafe-badge">₱160</span>
+                                    <button type="button" class="btn btn-cafe-secondary add-to-table-btn w-100 mt-3"
+                                            data-name="Matcha" data-price="160">
+                                        + Add to Table
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card menu-card h-100">
+                            <div class="card-body menu-card-body">
+                                <img class="menu-photo" src="https://i.pinimg.com/1200x/d4/4a/c1/d44ac1fb2e76c23643b3f83b23dcd674.jpg" alt="Castella Cake" loading="lazy">
+                                <div class="menu-card-content">
+                                    <h5 class="card-title">Castella Cake</h5>
+                                    <p class="card-text">Soft Japanese honey sponge cake, sliced thick.</p>
+                                    <span class="badge cafe-badge">₱120</span>
+                                    <button type="button" class="btn btn-cafe-secondary add-to-table-btn w-100 mt-3"
+                                            data-name="Castella Cake" data-price="120">
+                                        + Add to Table
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card menu-card h-100">
+                            <div class="card-body menu-card-body">
+                                <img class="menu-photo" src="https://i.pinimg.com/736x/47/a0/73/47a073244e80890244cf8f474e4d2d49.jpg" alt="Genmaicha" loading="lazy">
+                                <div class="menu-card-content">
+                                    <h5 class="card-title">Genmaicha</h5>
+                                    <p class="card-text">Roasted brown rice green tea, nutty and toasty.</p>
+                                    <span class="badge cafe-badge">₱130</span>
+                                    <button type="button" class="btn btn-cafe-secondary add-to-table-btn w-100 mt-3"
+                                            data-name="Genmaicha" data-price="130">
+                                        + Add to Table
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card menu-card h-100">
+                            <div class="card-body menu-card-body">
+                                <img class="menu-photo" src="https://i.pinimg.com/736x/7e/63/13/7e6313f43475f8026296eec5cbb2ef1f.jpg" alt="Yuzu Honey Tea" loading="lazy">
+                                <div class="menu-card-content">
+                                    <h5 class="card-title">Yuzu Honey Tea</h5>
+                                    <p class="card-text">Citrus yuzu marmalade steeped in warm honey tea.</p>
+                                    <span class="badge cafe-badge">₱135</span>
+                                    <button type="button" class="btn btn-cafe-secondary add-to-table-btn w-100 mt-3"
+                                            data-name="Yuzu Honey Tea" data-price="135">
+                                        + Add to Table
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card menu-card h-100">
+                            <div class="card-body menu-card-body">
+                                <img class="menu-photo" src="https://i.pinimg.com/736x/39/f9/34/39f934d765a7ae3f74383c0ac82cb980.jpg" alt="Dorayaki" loading="lazy">
+                                <div class="menu-card-content">
+                                    <h5 class="card-title">Dorayaki</h5>
+                                    <p class="card-text">Two soft pancakes filled with sweet red bean paste.</p>
+                                    <span class="badge cafe-badge">₱110</span>
+                                    <button type="button" class="btn btn-cafe-secondary add-to-table-btn w-100 mt-3"
+                                            data-name="Dorayaki" data-price="110">
+                                        + Add to Table
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card menu-card h-100">
+                            <div class="card-body menu-card-body">
+                                <img class="menu-photo" src="https://i.pinimg.com/1200x/7d/ea/c0/7deac0816c96d361c20c8bda3f94f8b1.jpg" alt="Onigiri" loading="lazy">
+                                <div class="menu-card-content">
+                                    <h5 class="card-title">Onigiri</h5>
+                                    <p class="card-text">A savory rice ball, wrapped in crisp seaweed.</p>
+                                    <span class="badge cafe-badge">₱95</span>
+                                    <button type="button" class="btn btn-cafe-secondary add-to-table-btn w-100 mt-3"
+                                            data-name="Onigiri" data-price="95">
+                                        + Add to Table
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- order summary, filled in by script.js -->
+            <div class="col-lg-4">
+                <div class="card order-summary-card sticky-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Your Table Order</h5>
+
+                        <ul class="list-group list-group-flush mb-3" id="order-list">
+                            <li class="list-group-item empty-order-message" id="empty-order-message">
+                                No items yet — add something warm!
+                            </li>
+                        </ul>
+
+                        <hr>
+
+                        <div class="d-flex justify-content-between order-total-row">
+                            <strong>Total</strong>
+                            <strong>₱<span id="order-total">0</span></strong>
+                        </div>
+
+                        <hr>
+
+                        <div class="mb-3">
+                            <label for="table-number" class="form-label">Table Number</label>
+                            <input type="text" class="form-control" id="table-number" placeholder="e.g. 4">
+                        </div>
+
+                        <!-- payment method -->
+                        <fieldset class="mb-3">
+                            <legend class="form-label h6">Payment Method</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="pay-cash" value="Cash on Table">
+                                <label class="form-check-label" for="pay-cash">Cash on Table</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="pay-gcash" value="GCash">
+                                <label class="form-check-label" for="pay-gcash">GCash</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="pay-card" value="Debit / Credit Card">
+                                <label class="form-check-label" for="pay-card">Debit / Credit Card</label>
+                            </div>
+                        </fieldset>
+
+                        <div class="mb-2">
+                            <label for="receipt-email" class="form-label">Email for Receipt (optional)</label>
+                            <input type="email" class="form-control" id="receipt-email" placeholder="you@example.com">
+                        </div>
+
+                        <!-- shown only when confirming fails validation -->
+                        <p class="order-warning d-none" id="order-warning"></p>
+
+                        <div class="d-flex gap-2 mt-3">
+                            <button type="button" class="btn btn-cafe-secondary w-50" id="cancel-order-btn">Cancel Order</button>
+                            <button type="button" class="btn btn-cafe-primary w-50" id="confirm-order-btn">Confirm Order</button>
+                        </div>
+
+                        <!-- hidden until the order is confirmed -->
+                        <div class="alert alert-success order-confirmation d-none mt-3" id="order-confirmation-banner" role="alert">
+                            <h5 class="alert-heading"><i class="bi bi-check-circle"></i> Order Confirmed!</h5>
+                            <p class="mb-3" id="order-confirmation-details"></p>
+
+                            <div class="d-flex gap-2">
+                                <button type="button" class="btn btn-cafe-secondary w-50" id="email-receipt-btn">
+                                    <i class="bi bi-envelope me-1"></i>Email Order
+                                </button>
+                                <button type="button" class="btn btn-cafe-primary w-50" id="download-receipt-btn">
+                                    <i class="bi bi-download me-1"></i>Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="cafe-footer text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 SHIORI Café · 栞 · Made for quiet minds</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/scripts/app.js"></script>
+    <script src="src/scripts/order.js"></script>
+</body>
+</html>

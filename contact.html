@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIORI Café | Reserve a Nook</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/components.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">栞 SHIORI Café</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About &amp; AI Buddy</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Reserve a Nook</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header reservation-page-header text-center">
+        <div class="container">
+            <h1 class="page-title">Reserve Your Nook</h1>
+            <p class="lead">Pick your favorite kind of quiet, and we'll have it ready.</p>
+        </div>
+    </header>
+
+    <!-- seat availability -->
+    <section class="container seat-section">
+        <h2 class="section-heading text-center">Choose Your Seat</h2>
+        <p class="text-center seat-intro">Tap an available seat below, then fill in your details.</p>
+
+        <div class="seat-legend">
+            <span class="seat-legend-item"><span class="seat-swatch seat-swatch-available"></span>Available</span>
+            <span class="seat-legend-item"><span class="seat-swatch seat-swatch-occupied"></span>Occupied</span>
+            <span class="seat-legend-item"><span class="seat-swatch seat-swatch-selected"></span>Selected</span>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="seat-grid">
+                    <button type="button" class="seat-btn" data-seat="Tatami Desk 1" data-type="Tatami Desk">Tatami Desk 1</button>
+                    <button type="button" class="seat-btn" data-seat="Tatami Desk 2" data-type="Tatami Desk">Tatami Desk 2</button>
+                    <button type="button" class="seat-btn" data-seat="Tatami Desk 3" data-type="Tatami Desk">Tatami Desk 3</button>
+                    <button type="button" class="seat-btn" data-seat="Window Nook 1" data-type="Window Nook">Window Nook 1</button>
+                    <button type="button" class="seat-btn" data-seat="Window Nook 2" data-type="Window Nook">Window Nook 2</button>
+                    <button type="button" class="seat-btn" data-seat="Window Nook 3" data-type="Window Nook">Window Nook 3</button>
+                    <button type="button" class="seat-btn" data-seat="Group Study Table 1" data-type="Group Study Table">Group Table 1</button>
+                    <button type="button" class="seat-btn" data-seat="Group Study Table 2" data-type="Group Study Table">Group Table 2</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container reservation-section">
+        <div class="row justify-content-center g-5">
+            <div class="col-lg-7">
+
+                <!-- hidden until form is submitted -->
+                <div class="alert alert-success reservation-confirmation d-none" id="confirmation-banner" role="alert">
+                    <h5 class="alert-heading"><i class="bi bi-check-circle"></i> Your nook is reserved!</h5>
+                    <p class="mb-3" id="confirmation-details"></p>
+
+                    <div class="d-flex gap-2">
+                        <button type="button" class="btn btn-cafe-secondary w-50" id="email-reservation-btn">
+                            <i class="bi bi-envelope me-1"></i>Email Reservation
+                        </button>
+                        <button type="button" class="btn btn-cafe-primary w-50" id="download-reservation-btn">
+                            <i class="bi bi-download me-1"></i>Download
+                        </button>
+                    </div>
+                </div>
+
+                <form id="reservation-form" class="card reservation-form-card">
+                    <div class="card-body">
+
+                        <div class="mb-3">
+                            <label for="guest-name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="guest-name" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="reservation-date" class="form-label">Date</label>
+                            <input type="date" class="form-control" id="reservation-date" required>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-sm-6">
+                                <label for="reservation-start-time" class="form-label">Start Time</label>
+                                <input type="time" class="form-control" id="reservation-start-time" required>
+                                <p class="reservation-availability d-none" id="reservation-availability" role="status"></p>
+                                <button type="button" class="btn btn-cafe-secondary btn-sm d-none mt-2" id="use-suggested-time">Use suggested time</button>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="reservation-end-time" class="form-label">End Time</label>
+                                <input type="time" class="form-control" id="reservation-end-time" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Selected Seat</label>
+                            <p class="selected-seat-display" id="selected-seat-display">No seat selected yet — tap one above.</p>
+                            <!-- hidden inputs hold data the form needs but the guest doesn't need to see -->
+                            <input type="hidden" id="selected-seat" value="">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="guest-email" class="form-label">Email for Receipt (optional)</label>
+                            <input type="email" class="form-control" id="guest-email" placeholder="you@example.com">
+                        </div>
+
+                        <button type="submit" class="btn btn-cafe-primary w-100">Confirm Reservation</button>
+                    </div>
+                </form>
+
+            </div>
+
+            <!-- visit us -->
+            <div class="col-lg-4">
+                <div class="card visit-card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Visit Us</h5>
+
+                        <p class="visit-item"><i class="bi bi-geo-alt"></i><a href="https://www.google.com/maps/search/?api=1&amp;query=12+Bookmark+Lane+San+Pedro+Laguna" target="_blank" rel="noopener">12 Bookmark Lane, San Pedro, Laguna</a></p>
+                        <p class="visit-item"><i class="bi bi-telephone"></i><a href="tel:+63495550182">(049) 555-0182</a></p>
+                        <p class="visit-item"><i class="bi bi-envelope"></i><a href="mailto:hello@shioricafe.com">hello@shioricafe.com</a></p>
+                        <p class="visit-item"><i class="bi bi-clock"></i> Mon–Fri 7AM–9PM · Sat–Sun 8AM–10PM</p>
+
+                        <a class="visit-map-placeholder mt-3" href="https://www.google.com/maps/search/?api=1&amp;query=12+Bookmark+Lane+San+Pedro+Laguna" target="_blank" rel="noopener">
+                            <i class="bi bi-map"></i>
+                            <span>Open location in Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="cafe-footer text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 SHIORI Café · 栞 · Made for quiet minds</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/scripts/app.js"></script>
+    <script src="src/scripts/reservation.js"></script>
+</body>
+</html>
