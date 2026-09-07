@@ -47,7 +47,7 @@ $(document).ready(function () {
 
         // ask our PHP backend (api/chat.php), which asks Gemini on our behalf
         $.ajax({
-            url: "api/chat.php",
+            url: apiFile("chat", "chat.php"),
             method: "POST",
             contentType: "application/json",
             data: JSON.stringify({ message: studentText }),

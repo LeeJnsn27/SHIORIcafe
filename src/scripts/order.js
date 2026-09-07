@@ -115,7 +115,7 @@ $(document).ready(function () {
         confirmButton.prop("disabled", true).text("Saving...");
 
         $.ajax({
-            url: "api/create-order.php",
+            url: apiFile("create-order", "create-order.php"),
             method: "POST",
             contentType: "application/json",
             dataType: "json",

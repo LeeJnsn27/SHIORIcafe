@@ -1,0 +1,9 @@
+{
+  "name": "shiori-cafe",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SHIORI Cafe website with Vercel serverless APIs",
+  "dependencies": {
+    "mysql2": "^3.14.1"
+  }
+}

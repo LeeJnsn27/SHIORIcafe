@@ -93,7 +93,7 @@ $(document).ready(function () {
         }
 
         let requestId = ++availabilityRequestId;
-        availabilityRequest = $.getJSON("api/seat-availability.php", {
+        availabilityRequest = $.getJSON(apiFile("seat-availability", "seat-availability.php"), {
             date: reservationDate,
             startTime: reservationStartTime,
             endTime: reservationEndTime,
@@ -214,7 +214,7 @@ $(document).ready(function () {
         submitButton.prop("disabled", true).text("Saving...");
 
         $.ajax({
-            url: "api/create-reservation.php",
+            url: apiFile("create-reservation", "create-reservation.php"),
             method: "POST",
             contentType: "application/json",
             dataType: "json",
